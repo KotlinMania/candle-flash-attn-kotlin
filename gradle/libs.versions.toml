@@ -9,6 +9,10 @@ detekt = "2.0.0-alpha.6"
 ktlint = "14.2.0"
 ktlintEngine = "1.8.0"
 kotlinxBenchmark = "0.5.0"
+candle = "0.1.1"
+half = "2.5.0"
+candleNn = "0.1.1"
+anyhow = "0.1.1"
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
@@ -21,11 +25,16 @@ kotlin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "ko
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "serialization" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "datetime" }
 collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "collectionsImmutable" }
 kotlinx-benchmark-runtime = { module = "org.jetbrains.kotlinx:kotlinx-benchmark-runtime", version.ref = "kotlinxBenchmark" }
+candle-kotlin = { module = "io.github.kotlinmania:candle-kotlin", version.ref = "candle" }
+half-kotlin = { module = "io.github.kotlinmania:half-kotlin", version.ref = "half" }
+candle-nn-kotlin = { module = "io.github.kotlinmania:candle-nn-kotlin", version.ref = "candleNn" }
+anyhow-kotlin = { module = "io.github.kotlinmania:anyhow-kotlin", version.ref = "anyhow" }
 
 [bundles]
 candleflashattn-commonMain = [
@@ -34,4 +43,11 @@ candleflashattn-commonMain = [
   "kotlinx-serialization-json",
   "kotlinx-datetime",
   "collections-immutable",
+  "candle-kotlin",
+  "half-kotlin",
+]
+candleflashattn-commonTest = [
+  "kotlinx-coroutines-test",
+  "candle-nn-kotlin",
+  "anyhow-kotlin",
 ]
